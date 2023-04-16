@@ -2,9 +2,14 @@
 {
     public class CalculationsTests
     {
+
+        private Calculations Calculator { get; set; }
+
         [SetUp]
         public void Setup()
         {
+            //Arrange
+            Calculator = new Calculations();
         }
 
 
@@ -14,11 +19,8 @@
         [TestCase(1234, -1234, 0)]
         public void AddShouldReturnExpectedValue(double x, double y, double expected)
         {
-            //Arrange
-            Calculations calculator = new Calculations();
-
             //Act
-            double actual = calculator.Add(x, y);
+            double actual = Calculator.Add(x, y);
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -30,11 +32,8 @@
         [TestCase(1234, -1234, 2468)]
         public void SubtractShouldReturnExpectedValue(double x, double y, double expected)
         {
-            //Arrange
-            Calculations calculator = new Calculations();
-
             //Act
-            double actual = calculator.Subtract(x, y);
+            double actual = Calculator.Subtract(x, y);
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -46,11 +45,8 @@
         [TestCase(1234, -1234, -1522756)]
         public void MultiplyShouldReturnExpectedValue(double x, double y, double expected)
         {
-            //Arrange
-            Calculations calculator = new Calculations();
-
             //Act
-            double actual = calculator.Multiply(x, y);
+            double actual = Calculator.Multiply(x, y);
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -62,11 +58,8 @@
         [TestCase(1234, -1234, -1)]
         public void DivideShouldReturnExpectedValue(double x, double y, double expected)
         {
-            //Arrange
-            Calculations calculator = new Calculations();
-
             //Act
-            double actual = calculator.Divide(x, y);
+            double actual = Calculator.Divide(x, y);
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
